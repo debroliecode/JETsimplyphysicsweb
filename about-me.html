@@ -9,7 +9,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Gabarito', sans-serif;
-      background-color: #1e293b; /* dark blue */
+      background-color: #1e293b; /* dark blue background */
       color: #f8fafc;
       display: flex;
       flex-direction: column;
@@ -36,16 +36,18 @@
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       color: #1e293b;
+      overflow: hidden; /* keeps contents inside rounded border */
     }
     .author-img {
       display: block;
       width: 100%;
-      max-width: 350px;
-      height: auto;
+      max-width: 90%;   /* ensures image fits comfortably in white box */
+      height: auto;     /* preserves aspect ratio */
       border-radius: 12px;
       margin: 0 auto 25px;
       border: 3px solid #3b82f6;
       object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
     h2 {
       color: #334155;
@@ -99,6 +101,19 @@
       color: white;
       font-size: 0.9em;
       box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Make image and layout responsive on small screens */
+    @media (max-width: 600px) {
+      main {
+        padding: 20px;
+      }
+      .author-img {
+        max-width: 100%;
+      }
+      h2 {
+        font-size: 1.3em;
+      }
     }
   </style>
 </head>
